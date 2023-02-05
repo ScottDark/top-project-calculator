@@ -41,6 +41,7 @@ body {
   margin-left: 1vw;
   margin-right: 1vw;
   padding-right: 10px;
+  overflow: hidden;
 }
 
 .btnContainer,
