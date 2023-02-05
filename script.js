@@ -38,7 +38,7 @@ function operate(operator, numberOne, numberTwo) {
       console.log(subtract(numberOne, numberTwo));
       break;
 
-    case "X":
+    case "x":
       console.log(multiply(numberOne, numberTwo));
       break;
 
