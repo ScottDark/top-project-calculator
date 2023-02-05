@@ -25,7 +25,6 @@ body {
   height: 40vh;
   border: solid black 2px;
   border-radius: 15px;
-  aspect-ratio: 2/1;
 }
 
 .display {
@@ -41,6 +40,7 @@ body {
   margin-top: 1vh;
   margin-left: 1vw;
   margin-right: 1vw;
+  padding-right: 10px;
 }
 
 .btnContainer,
@@ -63,4 +63,8 @@ body {
 
 .btnContainer {
   margin: 1vw;
+}
+
+.numWrapper {
+  margin-bottom: 15vh;
 }
