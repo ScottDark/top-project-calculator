@@ -50,3 +50,19 @@ function operate(operator, numberOne, numberTwo) {
       return;
   }
 }
+
+window.onload = display();
+
+/* Display function */
+function display() {
+  let button = document.querySelectorAll(".btn");
+
+  button.forEach((e) => {
+    let displayValue = e.addEventListener("click", function getButton() {
+      console.log(e.textContent);
+    });
+  });
+
+  let display = document.querySelector(".display");
+  // display.textContent = anyNumber;
+}
