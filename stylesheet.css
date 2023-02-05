@@ -19,11 +19,13 @@ body {
 .calcContainer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  background-color: #73b4e9;
+  background-color: #414146;
   margin-left: 25vw;
   width: 40vw;
   height: 40vh;
+  border: solid black 2px;
   border-radius: 15px;
+  aspect-ratio: 2/1;
 }
 
 .display {
