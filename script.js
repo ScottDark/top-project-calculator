@@ -38,11 +38,11 @@ function operate(operator, numberOne, numberTwo) {
       console.log(subtract(numberOne, numberTwo));
       break;
 
-    case "*":
+    case "X":
       console.log(multiply(numberOne, numberTwo));
       break;
 
-    case "/":
+    case "÷":
       console.log(divide(numberOne, numberTwo));
       break;
 
