@@ -53,7 +53,7 @@ function operate(operator, numberOne, numberTwo) {
 
 window.onload = display();
 
-/* Display function */
+/* Returns: Clicked number button to screen*/
 function display() {
   let button = document.querySelectorAll(".btn");
 
