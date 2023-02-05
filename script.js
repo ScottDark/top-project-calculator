@@ -59,10 +59,21 @@ function display() {
 
   button.forEach((e) => {
     let displayValue = e.addEventListener("click", function getButton() {
-      console.log(e.textContent);
+      let display = document.querySelector(".display");
+      if (
+        e.textContent === "." ||
+        e.textContent === "=" ||
+        e.textContent === "÷" ||
+        e.textContent === "x" ||
+        e.textContent === "-" ||
+        e.textContent === "+" ||
+        e.textContent === "AC"
+      ) {
+        // Do not display anything
+        return;
+      } else {
+        display.textContent += e.textContent;
+      }
     });
   });
-
-  let display = document.querySelector(".display");
-  // display.textContent = anyNumber;
 }
