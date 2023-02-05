@@ -23,6 +23,21 @@ body {
   margin-left: 25vw;
   width: 40vw;
   height: 40vh;
+  border-radius: 15px;
+  padding: 1vh;
+}
+
+.display {
+  display: flex;
+  grid-column: 1 / -1;
+  justify-content: end;
+  align-items: flex-end;
+  font-size: 4vh;
+  padding-right: 1vh;
+  padding-bottom: 1vh;
+  border: solid black 3px;
+  border-radius: 15px;
+  margin-bottom: 1vh;
 }
 
 .btnContainer,
