@@ -58,7 +58,7 @@ function display() {
   let button = document.querySelectorAll(".btn");
 
   button.forEach((e) => {
-    let displayValue = e.addEventListener("click", function getButton() {
+    e.addEventListener("click", function getButton() {
       let display = document.querySelector(".display");
       if (
         e.textContent === "." ||
@@ -66,13 +66,18 @@ function display() {
         e.textContent === "÷" ||
         e.textContent === "x" ||
         e.textContent === "-" ||
-        e.textContent === "+" ||
-        e.textContent === "AC"
+        e.textContent === "+"
       ) {
         // Do not display anything
+
         return;
+      } else if (e.textContent === "AC") {
+        let displayValue = (display.textContent = "");
+        return displayValue;
       } else {
-        display.textContent += e.textContent;
+        let displayValue = (display.textContent += e.textContent);
+
+        return displayValue;
       }
     });
   });
