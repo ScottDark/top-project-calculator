@@ -36,16 +36,12 @@ body {
   border: solid black 3px;
   border-radius: 15px;
   width: 38vw;
-  height: 10vh;
+  height: 6vh;
   margin-top: 1vh;
   margin-left: 1vw;
   margin-right: 1vw;
   padding-right: 10px;
   overflow: hidden;
-}
-
-.displaySum {
-  font-size: 3vh;
 }
 
 .btnContainer,
