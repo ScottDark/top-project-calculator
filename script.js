@@ -28,22 +28,18 @@ function divide(numberOne, numberTwo) {
 
 /* Returns: Calc function
  * args: operator, two numbers */
-function operate(operator, numberOne, numberTwo) {
+function operate(operator) {
   switch (operator) {
     case "+":
-      console.log(add(numberOne, numberTwo));
       break;
 
     case "-":
-      console.log(subtract(numberOne, numberTwo));
       break;
 
     case "x":
-      console.log(multiply(numberOne, numberTwo));
       break;
 
     case "÷":
-      console.log(divide(numberOne, numberTwo));
       break;
 
     default:
@@ -54,4 +50,27 @@ function operate(operator, numberOne, numberTwo) {
 window.onload = display();
 
 /* Returns: Clicked number button to screen*/
-function display() {}
+function display() {
+  // Target elements to be used later.
+  const displayContent = document.querySelector(".display");
+  const btnDecimal = document.querySelector(".btnDecimal");
+  const btnClear = document.querySelector(".btnClear");
+  const btnNum = document.querySelectorAll(".btnNum");
+  const btnOp = document.querySelectorAll(".btnOp");
+
+  // Temp variables to hold data
+  let tempCurrentNum = 0;
+  let tempDisplayValue;
+  let arrayCalc = [];
+  let getBtnValue = 0;
+
+  //Add Event listeners to numbers and operator buttons
+  btnNum.forEach((element) => {});
+  btnOp.forEach((element) => {});
+
+  if (getBtnValue === 0) {
+    getBtnValue = "";
+  } else {
+    displayContent.append(getBtnValue);
+  }
+}
