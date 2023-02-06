@@ -56,27 +56,40 @@ window.onload = display();
 /* Returns: Clicked number button to screen*/
 function display() {
   let button = document.querySelectorAll(".btn");
+  let counter = 0;
+  let displayValue = 0;
+
+  const calc = new Object();
 
   button.forEach((e) => {
     e.addEventListener("click", function getButton() {
       let display = document.querySelector(".display");
+
       if (
-        e.textContent === "." ||
         e.textContent === "=" ||
         e.textContent === "÷" ||
         e.textContent === "x" ||
         e.textContent === "-" ||
         e.textContent === "+"
       ) {
-        // Do not display anything
+        let number1 = display.textContent;
+        let operator = e.textContent;
+
+        counter++;
+
+        calc.operator = operator;
+        calc[`number${counter}`] = number1;
+
+        console.log(calc);
+        console.log(counter);
 
         return;
       } else if (e.textContent === "AC") {
-        let displayValue = (display.textContent = "");
+        displayValue = display.textContent = "";
+        counter = 0;
         return displayValue;
       } else {
-        let displayValue = (display.textContent += e.textContent);
-
+        displayValue = display.textContent += e.textContent;
         return displayValue;
       }
     });
