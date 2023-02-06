@@ -28,7 +28,7 @@ body {
 }
 
 .display {
-  display: grid;
+  display: flex;
   grid-column: 1 / -1;
   justify-content: end;
   align-items: flex-end;
@@ -36,7 +36,7 @@ body {
   border: solid black 3px;
   border-radius: 15px;
   width: 38vw;
-  height: 6vh;
+  height: 5vh;
   margin-top: 1vh;
   margin-left: 1vw;
   margin-right: 1vw;
@@ -66,6 +66,6 @@ body {
   margin: 1vw;
 }
 
-.numContainer {
+.numWrapper {
   margin-bottom: 15vh;
 }

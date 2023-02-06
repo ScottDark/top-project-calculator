@@ -28,18 +28,22 @@ function divide(numberOne, numberTwo) {
 
 /* Returns: Calc function
  * args: operator, two numbers */
-function operate(operator) {
+function operate(operator, numberOne, numberTwo) {
   switch (operator) {
     case "+":
+      console.log(add(numberOne, numberTwo));
       break;
 
     case "-":
+      console.log(subtract(numberOne, numberTwo));
       break;
 
     case "x":
+      console.log(multiply(numberOne, numberTwo));
       break;
 
     case "÷":
+      console.log(divide(numberOne, numberTwo));
       break;
 
     default:
@@ -51,26 +55,30 @@ window.onload = display();
 
 /* Returns: Clicked number button to screen*/
 function display() {
-  // Target elements to be used later.
-  const displayContent = document.querySelector(".display");
-  const btnDecimal = document.querySelector(".btnDecimal");
-  const btnClear = document.querySelector(".btnClear");
-  const btnNum = document.querySelectorAll(".btnNum");
-  const btnOp = document.querySelectorAll(".btnOp");
+  let button = document.querySelectorAll(".btn");
 
-  // Temp variables to hold data
-  let tempCurrentNum = 0;
-  let tempDisplayValue;
-  let arrayCalc = [];
-  let getBtnValue = 0;
+  button.forEach((e) => {
+    e.addEventListener("click", function getButton() {
+      let display = document.querySelector(".display");
+      if (
+        e.textContent === "." ||
+        e.textContent === "=" ||
+        e.textContent === "÷" ||
+        e.textContent === "x" ||
+        e.textContent === "-" ||
+        e.textContent === "+"
+      ) {
+        // Do not display anything
 
-  //Add Event listeners to numbers and operator buttons
-  btnNum.forEach((element) => {});
-  btnOp.forEach((element) => {});
+        return;
+      } else if (e.textContent === "AC") {
+        let displayValue = (display.textContent = "");
+        return displayValue;
+      } else {
+        let displayValue = (display.textContent += e.textContent);
 
-  if (getBtnValue === 0) {
-    getBtnValue = "";
-  } else {
-    displayContent.append(getBtnValue);
-  }
+        return displayValue;
+      }
+    });
+  });
 }
