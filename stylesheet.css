@@ -28,7 +28,7 @@ body {
 }
 
 .display {
-  display: flex;
+  display: grid;
   grid-column: 1 / -1;
   justify-content: end;
   align-items: flex-end;
@@ -36,12 +36,16 @@ body {
   border: solid black 3px;
   border-radius: 15px;
   width: 38vw;
-  height: 5vh;
+  height: 10vh;
   margin-top: 1vh;
   margin-left: 1vw;
   margin-right: 1vw;
   padding-right: 10px;
   overflow: hidden;
+}
+
+.displaySum {
+  font-size: 3vh;
 }
 
 .btnContainer,

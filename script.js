@@ -63,7 +63,8 @@ function display() {
 
   button.forEach((e) => {
     e.addEventListener("click", function getButton() {
-      let display = document.querySelector(".display");
+      let displayCurrent = document.querySelector(".displayCurrent");
+      let displaySum = document.querySelector(".displaySum");
 
       if (
         e.textContent === "=" ||
@@ -72,24 +73,25 @@ function display() {
         e.textContent === "-" ||
         e.textContent === "+"
       ) {
-        let number1 = display.textContent;
+        let calcNumber = displayCurrent.textContent;
         let operator = e.textContent;
-
+        if (counter >= 2) {
+          counter = 0;
+        }
+        displayValue = displayCurrent.textContent = "";
         counter++;
 
         calc.operator = operator;
-        calc[`number${counter}`] = number1;
+        calc[`number${counter}`] = calcNumber;
 
         console.log(calc);
         console.log(counter);
-
-        return;
       } else if (e.textContent === "AC") {
-        displayValue = display.textContent = "";
+        displayValue = displayCurrent.textContent = "";
         counter = 0;
         return displayValue;
       } else {
-        displayValue = display.textContent += e.textContent;
+        displayValue = displayCurrent.textContent += e.textContent;
         return displayValue;
       }
     });
