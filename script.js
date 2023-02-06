@@ -54,46 +54,4 @@ function operate(operator, numberOne, numberTwo) {
 window.onload = display();
 
 /* Returns: Clicked number button to screen*/
-function display() {
-  let button = document.querySelectorAll(".btn");
-  let counter = 0;
-  let displayValue = 0;
-
-  const calc = new Object();
-
-  button.forEach((e) => {
-    e.addEventListener("click", function getButton() {
-      let displayCurrent = document.querySelector(".displayCurrent");
-      let displaySum = document.querySelector(".displaySum");
-
-      if (
-        e.textContent === "=" ||
-        e.textContent === "÷" ||
-        e.textContent === "x" ||
-        e.textContent === "-" ||
-        e.textContent === "+"
-      ) {
-        let calcNumber = displayCurrent.textContent;
-        let operator = e.textContent;
-        if (counter >= 2) {
-          counter = 0;
-        }
-        displayValue = displayCurrent.textContent = "";
-        counter++;
-
-        calc.operator = operator;
-        calc[`number${counter}`] = calcNumber;
-
-        console.log(calc);
-        console.log(counter);
-      } else if (e.textContent === "AC") {
-        displayValue = displayCurrent.textContent = "";
-        counter = 0;
-        return displayValue;
-      } else {
-        displayValue = displayCurrent.textContent += e.textContent;
-        return displayValue;
-      }
-    });
-  });
-}
+function display() {}
