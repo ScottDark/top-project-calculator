@@ -95,8 +95,8 @@ function display() {
   getButtonOp.forEach((buttonOpTemp) => {
     buttonOpTemp.addEventListener("click", function () {
       // If display is empty then disable button operators.
-      if (getDisplay.textContent === "") {
-        buttonOpTemp.disabled = true;
+      if (getDisplay.textContent == "") {
+        // Do nothing
       } else {
         // Saves button operator if it is not "="
         buttonOp = buttonOpTemp.textContent;
@@ -132,7 +132,7 @@ function display() {
 
   btnEqual.addEventListener("click", function () {
     if (getDisplay.textContent === "") {
-      btnEqual.disabled = true;
+      // Do nothing
     } else {
       tempDisplayNumber2 = displayNumber;
       displayNumber = "";
