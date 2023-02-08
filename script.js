@@ -29,9 +29,14 @@ function divide(numberOne, numberTwo) {
 /* Returns: Calc function
  * args: operator, two numbers */
 function operate(operator, numberOne, numberTwo) {
+  const getDisplayResult = document.querySelector(".displayResult");
+
   switch (operator) {
     case "+":
-      console.log(add(parseInt(numberOne), parseInt(numberTwo)));
+      getDisplayResult.textContent = add(
+        parseInt(numberOne),
+        parseInt(numberTwo)
+      );
       break;
 
     case "-":
@@ -82,6 +87,7 @@ function display() {
     buttonOpTemp.addEventListener("click", function () {
       // Saves button operator if it is not "="
       buttonOp = buttonOpTemp.textContent;
+
       console.log(buttonOp);
 
       //  Saves number 2 to be used in Operate
@@ -89,6 +95,7 @@ function display() {
         tempDisplayNumber2 = displayNumber;
         displayNumber = "";
         getDisplayResult.textContent = tempDisplayNumber2;
+
         console.log("N2: " + tempDisplayNumber2);
       }
       // Saves number 1 to be used in Operate
@@ -97,6 +104,7 @@ function display() {
         displayNumber = "";
         getDisplayResult.textContent = tempDisplayNumber1;
         getDisplay.textContent = "";
+
         console.log("N1: " + tempDisplayNumber1);
       }
     });
