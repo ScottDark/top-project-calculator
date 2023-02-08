@@ -127,6 +127,7 @@ function display() {
     getDisplayResult.textContent = tempDisplayNumber2;
     console.log("N2: " + tempDisplayNumber2);
 
+    getDisplay.textContent = "";
     operate(buttonOp, tempDisplayNumber1, tempDisplayNumber2);
   });
 
