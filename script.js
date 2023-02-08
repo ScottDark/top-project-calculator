@@ -40,15 +40,24 @@ function operate(operator, numberOne, numberTwo) {
       break;
 
     case "-":
-      console.log(subtract(numberOne, numberTwo));
+      getDisplayResult.textContent = add(
+        parseInt(numberOne),
+        parseInt(numberTwo)
+      );
       break;
 
     case "x":
-      console.log(multiply(numberOne, numberTwo));
+      getDisplayResult.textContent = add(
+        parseInt(numberOne),
+        parseInt(numberTwo)
+      );
       break;
 
     case "÷":
-      console.log(divide(numberOne, numberTwo));
+      getDisplayResult.textContent = add(
+        parseInt(numberOne),
+        parseInt(numberTwo)
+      );
       break;
 
     default:
