@@ -57,16 +57,19 @@ window.onload = display();
 function display() {
   // Get class to be able to read/write to it and make adjustments to class div.
   const getDisplay = document.querySelector(".display");
+  const getDisplayResult = document.querySelector(".displayResult");
   const getButtonsNum = document.querySelectorAll(".btnNum");
   // displayText used to store first number.
-  let displayNumber1 = 0;
+  let displayNumber = 0;
+  let tempDisplayNumber1;
+  let tempDisplayNumber2;
 
   getButtonsNum.forEach((buttonNum) => {
     buttonNum.addEventListener("click", function () {
       // Set display as button text from numbers.
-      getDisplay.textContent += buttonNum.textContent;
 
-      displayNumber1 = getDisplay.textContent;
+      getDisplay.textContent += buttonNum.textContent;
+      displayNumber = getDisplay.textContent;
     });
   });
 
@@ -75,10 +78,20 @@ function display() {
 
   getButtonOp.forEach((buttonOp) => {
     buttonOp.addEventListener("click", function () {
-      let tempDisplayNumber1 = displayNumber1;
+      // When operator btn gets clicked save the displayNumber in temp var
+      // to make it easier to save second set of numbers for calculation.
+      tempDisplayNumber1 = displayNumber;
+      displayNumber = "";
+      getDisplayResult.textContent =
+        tempDisplayNumber1 + `${buttonOp.textContent}`;
+      getDisplay.textContent = "";
 
+      // Clear the display and all variables if AC button is clicked.
       if (buttonOp.textContent === "AC") {
         getDisplay.textContent = "";
+        getDisplayResult.textContent = "";
+        displayNumber = 0;
+        tempDisplayNumber1 = null;
       }
     });
   });

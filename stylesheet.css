@@ -27,8 +27,8 @@ body {
   border-radius: 15px;
 }
 
-.display {
-  display: flex;
+.displayContainer {
+  display: grid;
   grid-column: 1 / -1;
   justify-content: end;
   align-items: flex-end;
@@ -36,12 +36,28 @@ body {
   border: solid black 3px;
   border-radius: 15px;
   width: 38vw;
-  height: 5vh;
+  height: 10vh;
   margin-top: 1vh;
   margin-left: 1vw;
   margin-right: 1vw;
   padding-right: 10px;
   overflow: hidden;
+}
+
+.display {
+  display: flex;
+  height: 4vh;
+  width: 38vw;
+  font-size: 4vh;
+  justify-content: end;
+}
+
+.displayResult {
+  display: flex;
+  height: 4vh;
+  width: 38vw;
+  font-size: 3vh;
+  justify-content: end;
 }
 
 .btnContainer,
