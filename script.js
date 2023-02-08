@@ -31,7 +31,7 @@ function divide(numberOne, numberTwo) {
 function operate(operator, numberOne, numberTwo) {
   switch (operator) {
     case "+":
-      console.log(add(numberOne, numberTwo));
+      console.log(add(parseInt(numberOne), parseInt(numberTwo)));
       break;
 
     case "-":
@@ -59,12 +59,14 @@ function display() {
   const getDisplay = document.querySelector(".display");
   const getDisplayResult = document.querySelector(".displayResult");
   const getButtonsNum = document.querySelectorAll(".btnNum");
+
   // displayText used to store first number.
   let displayNumber = 0;
   let tempDisplayNumber1;
   let tempDisplayNumber2;
   let buttonOp;
 
+  // For each number btn add to display
   getButtonsNum.forEach((buttonNum) => {
     buttonNum.addEventListener("click", function () {
       // Set display as button text from numbers.
@@ -98,6 +100,17 @@ function display() {
         console.log("N1: " + tempDisplayNumber1);
       }
     });
+  });
+
+  const btnEqual = document.querySelector(".btnEqual");
+
+  btnEqual.addEventListener("click", function () {
+    tempDisplayNumber2 = displayNumber;
+    displayNumber = "";
+    getDisplayResult.textContent = tempDisplayNumber2;
+    console.log("N2: " + tempDisplayNumber2);
+
+    operate(buttonOp, tempDisplayNumber1, tempDisplayNumber2);
   });
 
   // Allows AC to clear everything
