@@ -50,6 +50,7 @@ body {
   width: 38vw;
   font-size: 4vh;
   justify-content: end;
+  overflow: hidden;
 }
 
 .displayResult {
@@ -58,6 +59,7 @@ body {
   width: 38vw;
   font-size: 3vh;
   justify-content: end;
+  overflow: hidden;
 }
 
 .btnContainer,

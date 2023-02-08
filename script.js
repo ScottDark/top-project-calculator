@@ -82,8 +82,7 @@ function display() {
       // to make it easier to save second set of numbers for calculation.
       tempDisplayNumber1 = displayNumber;
       displayNumber = "";
-      getDisplayResult.textContent =
-        tempDisplayNumber1 + `${buttonOp.textContent}`;
+      getDisplayResult.textContent = tempDisplayNumber1;
       getDisplay.textContent = "";
 
       // Clear the display and all variables if AC button is clicked.
