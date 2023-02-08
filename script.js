@@ -67,7 +67,6 @@ function display() {
   getButtonsNum.forEach((buttonNum) => {
     buttonNum.addEventListener("click", function () {
       // Set display as button text from numbers.
-
       getDisplay.textContent += buttonNum.textContent;
       displayNumber = getDisplay.textContent;
     });
@@ -80,10 +79,17 @@ function display() {
     buttonOp.addEventListener("click", function () {
       // When operator btn gets clicked save the displayNumber in temp var
       // to make it easier to save second set of numbers for calculation.
-      tempDisplayNumber1 = displayNumber;
-      displayNumber = "";
-      getDisplayResult.textContent = tempDisplayNumber1;
-      getDisplay.textContent = "";
+      if (tempDisplayNumber1 != undefined && tempDisplayNumber2 == undefined) {
+        tempDisplayNumber2 = displayNumber;
+        displayNumber = "";
+        getDisplayResult.textContent = tempDisplayNumber2;
+        console.log("temp2 " + tempDisplayNumber2);
+      } else {
+        tempDisplayNumber1 = displayNumber;
+        displayNumber = "";
+        getDisplayResult.textContent = tempDisplayNumber1;
+        getDisplay.textContent = "";
+      }
 
       // Clear the display and all variables if AC button is clicked.
       if (buttonOp.textContent === "AC") {
