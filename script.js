@@ -63,6 +63,7 @@ function display() {
   let displayNumber = 0;
   let tempDisplayNumber1;
   let tempDisplayNumber2;
+  let buttonOp;
 
   getButtonsNum.forEach((buttonNum) => {
     buttonNum.addEventListener("click", function () {
@@ -78,7 +79,7 @@ function display() {
   getButtonOp.forEach((buttonOpTemp) => {
     buttonOpTemp.addEventListener("click", function () {
       // Saves button operator if it is not "="
-      let buttonOp = buttonOpTemp.textContent;
+      buttonOp = buttonOpTemp.textContent;
       console.log(buttonOp);
 
       //  Saves number 2 to be used in Operate
@@ -86,7 +87,7 @@ function display() {
         tempDisplayNumber2 = displayNumber;
         displayNumber = "";
         getDisplayResult.textContent = tempDisplayNumber2;
-        console.log("temp2 " + tempDisplayNumber2);
+        console.log("N2: " + tempDisplayNumber2);
       }
       // Saves number 1 to be used in Operate
       else {
@@ -94,6 +95,7 @@ function display() {
         displayNumber = "";
         getDisplayResult.textContent = tempDisplayNumber1;
         getDisplay.textContent = "";
+        console.log("N1: " + tempDisplayNumber1);
       }
     });
   });
