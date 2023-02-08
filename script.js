@@ -94,27 +94,36 @@ function display() {
 
   getButtonOp.forEach((buttonOpTemp) => {
     buttonOpTemp.addEventListener("click", function () {
-      // Saves button operator if it is not "="
-      buttonOp = buttonOpTemp.textContent;
+      // If display is empty then disable button operators.
+      if (getDisplay.textContent === "") {
+        buttonOpTemp.disabled = true;
+      } else {
+        // Saves button operator if it is not "="
+        buttonOp = buttonOpTemp.textContent;
 
-      console.log(buttonOp);
+        console.log(buttonOp);
 
-      //  Saves number 2 to be used in Operate
-      if (tempDisplayNumber1 != undefined && tempDisplayNumber2 == undefined) {
-        tempDisplayNumber2 = displayNumber;
-        displayNumber = "";
-        getDisplayResult.textContent = tempDisplayNumber2;
+        //  Saves number 2 to be used in Operate
+        if (
+          tempDisplayNumber1 != undefined &&
+          tempDisplayNumber2 == undefined
+        ) {
+          tempDisplayNumber2 = displayNumber;
+          displayNumber = "";
+          getDisplayResult.textContent = tempDisplayNumber2;
 
-        console.log("N2: " + tempDisplayNumber2);
-      }
-      // Saves number 1 to be used in Operate
-      else {
-        tempDisplayNumber1 = displayNumber;
-        displayNumber = "";
-        getDisplayResult.textContent = tempDisplayNumber1;
-        getDisplay.textContent = "";
+          console.log("N2: " + tempDisplayNumber2);
+        }
 
-        console.log("N1: " + tempDisplayNumber1);
+        // Saves number 1 to be used in Operate
+        else {
+          tempDisplayNumber1 = displayNumber;
+          displayNumber = "";
+          getDisplayResult.textContent = tempDisplayNumber1;
+          getDisplay.textContent = "";
+
+          console.log("N1: " + tempDisplayNumber1);
+        }
       }
     });
   });
@@ -122,13 +131,17 @@ function display() {
   const btnEqual = document.querySelector(".btnEqual");
 
   btnEqual.addEventListener("click", function () {
-    tempDisplayNumber2 = displayNumber;
-    displayNumber = "";
-    getDisplayResult.textContent = tempDisplayNumber2;
-    console.log("N2: " + tempDisplayNumber2);
+    if (getDisplay.textContent === "") {
+      btnEqual.disabled = true;
+    } else {
+      tempDisplayNumber2 = displayNumber;
+      displayNumber = "";
+      getDisplayResult.textContent = tempDisplayNumber2;
+      console.log("N2: " + tempDisplayNumber2);
 
-    getDisplay.textContent = "";
-    operate(buttonOp, tempDisplayNumber1, tempDisplayNumber2);
+      getDisplay.textContent = "";
+      operate(buttonOp, tempDisplayNumber1, tempDisplayNumber2);
+    }
   });
 
   // Allows AC to clear everything
