@@ -55,29 +55,30 @@ window.onload = display();
 
 /* Returns: Clicked number button to screen*/
 function display() {
-  let button = document.querySelectorAll(".btn");
+  // Get class to be able to read/write to it and make adjustments to class div.
+  const getDisplay = document.querySelector(".display");
+  const getButtonsNum = document.querySelectorAll(".btnNum");
+  // displayText used to store first number.
+  let displayNumber1 = 0;
 
-  button.forEach((e) => {
-    e.addEventListener("click", function getButton() {
-      let display = document.querySelector(".display");
-      if (
-        e.textContent === "." ||
-        e.textContent === "=" ||
-        e.textContent === "÷" ||
-        e.textContent === "x" ||
-        e.textContent === "-" ||
-        e.textContent === "+"
-      ) {
-        // Do not display anything
+  getButtonsNum.forEach((buttonNum) => {
+    buttonNum.addEventListener("click", function () {
+      // Set display as button text from numbers.
+      getDisplay.textContent += buttonNum.textContent;
 
-        return;
-      } else if (e.textContent === "AC") {
-        let displayValue = (display.textContent = "");
-        return displayValue;
-      } else {
-        let displayValue = (display.textContent += e.textContent);
+      displayNumber1 = getDisplay.textContent;
+    });
+  });
 
-        return displayValue;
+  // Get all operator buttons selected.
+  const getButtonOp = document.querySelectorAll(".btnOp");
+
+  getButtonOp.forEach((buttonOp) => {
+    buttonOp.addEventListener("click", function () {
+      let tempDisplayNumber1 = displayNumber1;
+
+      if (buttonOp.textContent === "AC") {
+        getDisplay.textContent = "";
       }
     });
   });
