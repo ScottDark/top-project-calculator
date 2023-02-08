@@ -75,29 +75,36 @@ function display() {
   // Get all operator buttons selected.
   const getButtonOp = document.querySelectorAll(".btnOp");
 
-  getButtonOp.forEach((buttonOp) => {
-    buttonOp.addEventListener("click", function () {
-      // When operator btn gets clicked save the displayNumber in temp var
-      // to make it easier to save second set of numbers for calculation.
+  getButtonOp.forEach((buttonOpTemp) => {
+    buttonOpTemp.addEventListener("click", function () {
+      // Saves button operator if it is not "="
+      let buttonOp = buttonOpTemp.textContent;
+      console.log(buttonOp);
+
+      //  Saves number 2 to be used in Operate
       if (tempDisplayNumber1 != undefined && tempDisplayNumber2 == undefined) {
         tempDisplayNumber2 = displayNumber;
         displayNumber = "";
         getDisplayResult.textContent = tempDisplayNumber2;
         console.log("temp2 " + tempDisplayNumber2);
-      } else {
+      }
+      // Saves number 1 to be used in Operate
+      else {
         tempDisplayNumber1 = displayNumber;
         displayNumber = "";
         getDisplayResult.textContent = tempDisplayNumber1;
         getDisplay.textContent = "";
       }
-
-      // Clear the display and all variables if AC button is clicked.
-      if (buttonOp.textContent === "AC") {
-        getDisplay.textContent = "";
-        getDisplayResult.textContent = "";
-        displayNumber = 0;
-        tempDisplayNumber1 = null;
-      }
     });
+  });
+
+  // Allows AC to clear everything
+  const btnClear = document.querySelector(".btnClear");
+
+  btnClear.addEventListener("click", function () {
+    getDisplay.textContent = "";
+    getDisplayResult.textContent = "";
+    displayNumber = 0;
+    tempDisplayNumber1 = undefined;
   });
 }
