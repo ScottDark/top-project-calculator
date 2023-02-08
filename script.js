@@ -40,21 +40,21 @@ function operate(operator, numberOne, numberTwo) {
       break;
 
     case "-":
-      getDisplayResult.textContent = add(
+      getDisplayResult.textContent = subtract(
         parseInt(numberOne),
         parseInt(numberTwo)
       );
       break;
 
     case "x":
-      getDisplayResult.textContent = add(
+      getDisplayResult.textContent = multiply(
         parseInt(numberOne),
         parseInt(numberTwo)
       );
       break;
 
     case "÷":
-      getDisplayResult.textContent = add(
+      getDisplayResult.textContent = divide(
         parseInt(numberOne),
         parseInt(numberTwo)
       );
